@@ -11,6 +11,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
+    "blast/facades": "~1",
     "container-interop/container-interop": "*",
     "symfony/http-foundation": "~2",
     "symfony/http-kernel": "~2"
