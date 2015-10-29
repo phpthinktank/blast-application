@@ -35,5 +35,10 @@
       "cd vendor/phpunit/phpunit",
       "phpunit --configuration phpunit.xml"
     ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
   }
 }
