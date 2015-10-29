@@ -8,7 +8,7 @@
 
 namespace Blast\Application\Http;
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
 use Blast\Application\Middleware\AfterInterface;
 use Blast\Application\Middleware\BeforeInterface;
 use Blast\Application\Middleware\Collection;
@@ -27,14 +27,14 @@ class Kernel implements HttpKernelInterface, TerminableInterface
     protected $request;
     protected $collection;
 
-    public function __construct(ApplicationInterface $application)
+    public function __construct(KernelInterface $application)
     {
         $this->collection = new Collection();
         $this->application = $application;
     }
 
     /**
-     * @return ApplicationInterface
+     * @return KernelInterface
      */
     public function getApplication()
     {
@@ -42,7 +42,7 @@ class Kernel implements HttpKernelInterface, TerminableInterface
     }
 
     /**
-     * @param ApplicationInterface $application
+     * @param KernelInterface $application
      */
     public function setApplication($application)
     {
@@ -116,7 +116,7 @@ class Kernel implements HttpKernelInterface, TerminableInterface
     {
         $response = new Response();
         $callback = function (
-            ApplicationInterface $application,
+            KernelInterface $application,
             Request $request,
             Response $response
         ) {

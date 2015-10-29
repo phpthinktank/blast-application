@@ -6,10 +6,12 @@
  * Time: 12:08
  */
 
-namespace Blast\Application\Middleware;
+namespace Blast\Application\Middleware\Runner;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
+use Blast\Application\Middleware\AfterInterface;
+use Blast\Application\Middleware\BeforeInterface;
 use Blast\Facades\FacadeFactory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 class FilterRunner extends AbstractRunner implements RunnerInterface
 {
 
-    public function run(ApplicationInterface $application, Request $request, Response $response, callable $callback = null){
+    public function run(KernelInterface $application, Request $request, Response $response, callable $callback = null){
         $container = $application->getContainer();
         $collection = $this->getCollection();
 
@@ -30,7 +32,7 @@ class FilterRunner extends AbstractRunner implements RunnerInterface
             }
         }
 
-        $response = is_callable($callback) ? $container->call($callback, [$application, $request, $response]) : $response;
+        $response = is_callable($callback) ? call_user_func_array($callback, [$application, $request, $response]) : $response;
 
         //run after middleware
         //middleware is modifying the request and response

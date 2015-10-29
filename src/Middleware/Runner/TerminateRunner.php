@@ -6,10 +6,10 @@
  * Time: 12:30
  */
 
-namespace Blast\Application\Middleware;
+namespace Blast\Application\Middleware\Runner;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\TerminableInterface;
@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\TerminableInterface;
 class TerminateRunner extends AbstractRunner implements RunnerInterface
 {
 
-    public function run(ApplicationInterface $application, Request $request, Response $response, callable $callback = null){
+    public function run(KernelInterface $application, Request $request, Response $response, callable $callback = null){
         foreach ($this->getCollection() as $middleware) {
             $middleware = $application->getContainer()->get($middleware);
 

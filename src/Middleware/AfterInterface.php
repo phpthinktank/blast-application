@@ -9,7 +9,7 @@
 namespace Blast\Application\Middleware;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -18,11 +18,11 @@ interface AfterInterface
 {
 
     /**
-     * @param ApplicationInterface $app
+     * @param KernelInterface $app
      * @param Request $request
      * @param Response $response
      * @return mixed
      */
-    public function after(ApplicationInterface $app, Request $request, Response $response);
+    public function after(KernelInterface $app, Request $request, Response $response);
 
 }

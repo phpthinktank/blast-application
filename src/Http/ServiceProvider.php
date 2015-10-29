@@ -9,7 +9,7 @@
 namespace Blast\Application\Http;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
 use Blast\Application\ErrorHandlerInterface;
 use Blast\Application\Application;
 use League\Container\ServiceProvider\AbstractServiceProvider;
@@ -38,12 +38,12 @@ class ServiceProvider extends AbstractServiceProvider implements BootableService
     {
         $container = $this->getContainer();
         $container->add(ErrorHandlerInterface::class, ErrorHandler::class);
-        $container->add(ApplicationInterface::class, ApplicationInterface::class);
+        $container->add(KernelInterface::class, KernelInterface::class);
         $container->add(Request::class);
         $container->add(Response::class);
         $container->add(MiddlewareCollection::class);
         $container->add(HttpKernelInterface::class, Application::class)
-            ->withArgument(ApplicationInterface::class)
+            ->withArgument(KernelInterface::class)
             ->withArgument(Request::class)
             ->withArgument(Response::class);
     }

@@ -9,13 +9,13 @@
 namespace Blast\Application\Facades;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
 use Blast\Facades\AbstractFacade;
 
 class App extends AbstractFacade
 {
     protected static function accessor()
     {
-        return ApplicationInterface::class;
+        return KernelInterface::class;
     }
 }

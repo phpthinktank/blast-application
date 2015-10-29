@@ -1,8 +1,8 @@
 {
-  "name": "Blast",
+  "name": "blast/application",
   "description": "The fast application runner",
   "minimum-stability": "dev",
-  "license": "GPL",
+  "license": "MIT",
   "authors": [
     {
       "name": "Marco Bunge",
@@ -11,22 +11,16 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "league/container": "~2.0",
-    "league/event": "~2.0",
-    "psr/http-message": "~1.0",
-    "symfony/config": "~2",
-    "symfony/filesystem": "~2",
     "symfony/http-foundation": "~2",
-    "symfony/http-kernel": "~2",
-    "symfony/psr-http-message-bridge": "*",
-    "puli/repository": "^1.0"
+    "symfony/http-kernel": "~2"
   },
   "require-dev": {
+    "league/container": "~2.0",
     "phpunit/phpunit": "4.8.*"
   },
   "autoload": {
     "psr-4": {
-      "Blast\\": "src"
+      "Blast\\Application\\": "src"
     }
   },
   "autoload-dev": {

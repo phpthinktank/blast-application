@@ -6,10 +6,11 @@
  * Time: 12:22
  */
 
-namespace Blast\Application\Middleware;
+namespace Blast\Application\Middleware\Runner;
 
 
-use Blast\Application\ApplicationInterface;
+use Blast\Application\KernelInterface;
+use Blast\Application\Middleware\Collection;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -45,6 +46,6 @@ abstract class AbstractRunner implements RunnerInterface
         $this->collection = $collection;
     }
 
-    abstract public function run(ApplicationInterface $application, Request $request, Response $response, callable $callback = null);
+    abstract public function run(KernelInterface $application, Request $request, Response $response, callable $callback = null);
 
 }
