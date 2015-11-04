@@ -37,6 +37,13 @@
     "container-interop/container-interop": "~1.1",
     "psr/http-message": "~1.0"
   },
+  "replace": {
+    "blast/bootloader": "1.x-dev"
+  },
+  "suggest": {
+    "league/container": "Recommended container-interop implementation",
+    "wellrested/wellrested": "Recommended psr-7 http message implementation"
+  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.x-dev"

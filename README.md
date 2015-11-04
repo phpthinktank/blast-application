@@ -49,7 +49,7 @@ $application->setConfig([
 ]);
 ```
 
-Or receive config data from any where
+Or receive config data from anywhere
 
 ```php
 <?php
@@ -61,7 +61,7 @@ $application->setConfig($config);
 
 You are free to choose how to pass configuration. You could also use packages like 
 
- - blast\config
+ - [blast\config](https://github.com/phpthinktank/blast-config)
  - [more](https://packagist.org/search/?q=config)
  
 #### Container
@@ -69,7 +69,7 @@ You are free to choose how to pass configuration. You could also use packages li
 Modern application needs to decouple complexity. That means we want to manage services and inject them automatically. 
 Blast application is following the standard of `container-interop/container-interop`.
 
-We use `league/container` for example.
+We use [`league/container`](http://container.thephpleague.com/) for example.
 
 ```
 <?php
@@ -86,7 +86,7 @@ Here is an list of [container-interop](https://github.com/container-interop/cont
 Our application is dispatching an added strategy with an PSR-7 request and response. Within this strategy you could 
 define your own logic. 
 
-For example we use `wellrested/wellrested` for our PSR-7 implementation.
+For example we use [`wellrested/wellrested`](https://github.com/wellrestedphp/wellrested) for our PSR-7 implementation.
 
 ```php
 <?php

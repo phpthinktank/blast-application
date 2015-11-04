@@ -72,7 +72,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 
             });
     }
-    
+
     /**
      * Assert that dispatch is executng attached strategy and returning response
      * Assert that added strategy is instance of StrategyInterface and is receivable
