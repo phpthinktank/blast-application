@@ -1,5 +1,5 @@
 {
-  "name": "Blast",
+  "name": "blast/application",
   "description": "The fast application runner",
   "minimum-stability": "dev",
   "license": "GPL",
