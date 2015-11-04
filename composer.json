@@ -1,6 +1,6 @@
 {
   "name": "blast/application",
-  "description": "The fast application runner",
+  "description": "An alternative way of using applications",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
@@ -11,13 +11,10 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "blast/facades": "~1",
-    "container-interop/container-interop": "*",
-    "symfony/http-foundation": "~2",
-    "symfony/http-kernel": "~2"
+    "container-interop/container-interop": "~1.1",
+    "psr/http-message": "~1.0"
   },
   "require-dev": {
-    "league/container": "~2.0",
     "phpunit/phpunit": "4.8.*"
   },
   "autoload": {
@@ -35,6 +32,10 @@
       "cd vendor/phpunit/phpunit",
       "phpunit --configuration phpunit.xml"
     ]
+  },
+  "provide": {
+    "container-interop/container-interop": "~1.1",
+    "psr/http-message": "~1.0"
   },
   "extra": {
     "branch-alias": {

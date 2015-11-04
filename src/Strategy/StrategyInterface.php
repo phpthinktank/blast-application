@@ -2,26 +2,25 @@
 /**
  * Created by PhpStorm.
  * User: Marco Bunge
- * Date: 29.10.2015
- * Time: 08:11
+ * Date: 04.11.2015
+ * Time: 14:44
  */
 
-namespace Blast\Application\Kernel;
+namespace Blast\Application\Strategy;
 
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Blast\Application\Kernel\KernelInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 interface StrategyInterface
 {
     /**
-     * The resolver is taking your request and is executing custom logic
-     * @param HttpKernelInterface $kernel
-     * @param Request $request
-     * @param Response $response
-     * @return mixed
+     * @param KernelInterface $kernel
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
      */
-    public function run(HttpKernelInterface $kernel, Request $request, Response $response);
+    public function dispatch(KernelInterface $kernel, RequestInterface $request, ResponseInterface $response);
 
 }
