@@ -1,7 +1,18 @@
 {
   "name": "blast/application",
-  "description": "An alternative way of using applications",
+  "description": "The framework agnostic application life-cycle",
   "minimum-stability": "dev",
+  "keywords": [
+        "application",
+		"framework",
+		"agnostic",
+		"psr-7",
+		"container-interop",
+		"container",
+		"http",
+		"web-application",
+		"blast"
+    ],
   "license": "MIT",
   "authors": [
     {
